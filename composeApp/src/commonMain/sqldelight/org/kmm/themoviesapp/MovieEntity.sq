@@ -1,0 +1,20 @@
+import kotlin.Boolean;
+
+CREATE TABLE MovieEntity (
+    id INTEGER NOT NULL PRIMARY KEY ,
+    title TEXT NOT NULL,
+    backdropPath TEXT NOT NULL,
+    releaseDate TEXT NOT NULL,
+    adult INTEGER AS Boolean DEFAULT NULL
+);
+
+insertMovie:
+INSERT INTO MovieEntity(id, title,backdropPath, releaseDate, adult)
+VALUES(?,?,?,?,?);
+
+getAllMovies:
+SELECT MovieEntity.* FROM MovieEntity;
+
+
+delete:
+DELETE FROM MovieEntity;
